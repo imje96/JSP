@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" version="5.0">
+  <display-name>WebTest</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>dbId</param-name>
+    <param-value>abcde</param-value>
+  </context-param>
+  <context-param>
+    <param-name>dbPwd</param-name>
+    <param-value>12345</param-value>
+  </context-param>
+  <context-param>
+    <param-name>dbSid</param-name>
+    <param-value>oracle</param-value>
+  </context-param>
+  <listener>
+    <listener-class>com.jieun.jsp.ContextListenerEx</listener-class>
+  </listener>
+  <servlet>
+    <description></description>
+    <display-name>ContextListenerEx</display-name>
+    <servlet-name>ContextListenerEx</servlet-name>
+    <servlet-class>com.jieun.jsp.ContextListenerEx</servlet-class>
+  </servlet>
+  <listener>
+  	<listener-class>com.jieun.jsp.ContextListenerEx</listener-class>
+  </listener>
+ <!--  <servlet-mapping>
+    <servlet-name>ContextListenerEx</servlet-name>
+    <url-pattern>/ContextListenerEx</url-pattern>
+  </servlet-mapping> -->
+  <servlet>
+    <description></description>
+    <display-name>LifeCycleEx</display-name>
+    <servlet-name>LifeCycleEx</servlet-name>
+    <servlet-class>com.jieun.jsp.LifeCycleEx</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LifeCycleEx</servlet-name>
+    <url-pattern>/LifeCycleEx</url-pattern>
+  </servlet-mapping>
+<!--   <servlet-mapping>
+    <servlet-name>TestServlet</servlet-name>
+    <url-pattern>/TestServlet</url-pattern>
+  </servlet-mapping>
+ -->
+ </web-app>
