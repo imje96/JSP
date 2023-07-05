@@ -7,6 +7,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.joinCommand;
 import model.kakaoLoginCommand;
 import model.mailCommand;
 import model.memberCommand;
@@ -75,17 +76,29 @@ public class FrontController extends HttpServlet {
         String command = uri.substring(conPath.length());
         System.out.println("command : " + command);
 
-        if (command.equals("/login.do")) {
-            System.out.println("login.do");
+        if (command.equals("/view/kakaoLogin.do")) {
+
+            System.out.println("kakaoLogin.do");
             memberCommand mc = new kakaoLoginCommand();
             mc.execute(request, response);
+
         }
-        else if(command.equals("/mail.do")) {
+        else if(command.equals("/view/mail.do")) {
             memberCommand mc = new mailCommand();
             mc.execute(request, response);
             
             System.out.println("mail.do");
             viewPage = "join.jsp";
+        }
+        else if(command.equals("/view/join.do")) {
+            memberCommand mc = new joinCommand();
+            mc.execute(request, response);
+            viewPage = "joinOk.jsp";
+        }
+        else if(command.equals("/view/login.do")) {
+            memberCommand mc = new joinCommand();
+            mc.execute(request, response);
+            viewPage = "loginOk.jsp";
         }
         
         // 포워딩
